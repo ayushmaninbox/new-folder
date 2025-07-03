@@ -48,7 +48,7 @@ const together = createOpenAI({
 function getAvailableModel() {
   // Priority order: Groq (fastest free) -> Hugging Face -> Together -> OpenAI (fallback)
   if (process.env.GROQ_API_KEY) {
-    return groq('llama-3.1-70b-versatile'); // Fast and free
+    return groq('llama-3.3-70b-versatile'); // Fast and free
   }
   
   if (process.env.HUGGINGFACE_API_KEY) {
