@@ -1,6 +1,5 @@
 'use client';
 
-import FluidCursor from '@/components/FluidCursor';
 import { Button } from '@/components/ui/button';
 import WelcomeModal from '@/components/welcome-modal';
 import { motion } from 'framer-motion';
@@ -13,9 +12,15 @@ import {
   UserRoundSearch,
 } from 'lucide-react';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import { useRouter } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import GitHubButton from 'react-github-btn';
+
+// Dynamically import FluidCursor to avoid SSR issues
+const FluidCursor = dynamic(() => import('@/components/FluidCursor'), {
+  ssr: false,
+});
 
 /* ---------- quick-question data ---------- */
 const questions = {
