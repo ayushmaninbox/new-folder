@@ -7,12 +7,12 @@ import React from 'react';
 export function Presentation() {
   // Personal information
   const profile = {
-    name: 'Raphael Giraud',
-    age: '21 years old',
-    location: 'Paris, France',
+    name: 'Ayushman Mohapatra',
+    age: '19 years old',
+    location: 'Bhubaneswar, Odisha, India',
     // Add a newline character after the emoji
     description:
-      "Hey 👋\nI'm Raph also known as Toukoum. I'm a developer specializing in AI at 42 Paris. I'm working at LightOn AI in Paris. I'm passionate about AI, tech, Entrepreneurship and SaaS tech.",
+      "Hey 👋\nI'm Ayushman, a 19-year-old full-stack developer specializing in AI and Web Development. Currently studying Computer Science at VIT Vellore. I'm also a professional music producer releasing music under 'Alpha Morris'. I'm passionate about AI, tech, music, and building cool stuff!",
     src: '/profil-raph.png',
     fallbackSrc:
       'https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3',
@@ -103,7 +103,7 @@ export function Presentation() {
             transition={{ delay: 0.6, duration: 0.5 }}
             className="mt-4 flex flex-wrap gap-2"
           >
-            {['AI', 'Developer', '42 Paris', 'Sport', 'SaaS Builder'].map(
+            {['AI Developer', 'Full-Stack', 'VIT Vellore', 'Music Producer', 'Alpha Morris'].map(
               (tag) => (
                 <span
                   key={tag}

@@ -7,33 +7,29 @@ import { ChevronRight } from 'lucide-react';
 export function Contact() {
   // Contact information
   const contactInfo = {
-    name: 'Raphael Giraud',
-    email: 'raphaelgiraud12@gmail.com',
-    handle: '@Raphael.Giraud',
+    name: 'Ayushman Mohapatra',
+    email: 'ayushmanmohapatra895@gmail.com',
+    handle: '@theayushmanguy',
     socials: [
       {
         name: 'LinkedIn',
-        url: 'https://www.linkedin.com/in/raphael-giraud-60939519a/',
+        url: 'https://www.linkedin.com/in/ayushman-mohapatra/',
       },
       {
-        name: 'Youtube',
-        url: 'https://www.youtube.com/@toukoum',
+        name: 'GitHub',
+        url: 'https://github.com/ayushmaninbox',
       },
       {
         name: 'Instagram',
-        url: 'https://www.instagram.com/raphael.giraud/',
+        url: 'https://www.instagram.com/theayushmanguy/',
       },
       {
-        name: 'Discord',
-        url: 'https://discord.com/users/toukoum',
+        name: 'Spotify (Alpha Morris)',
+        url: 'https://open.spotify.com/artist/71t8djU1BEoRwQsA6Vkd4j',
       },
       {
-        name: 'Github',
-        url: 'https://github.com/toukoum',
-      },
-      {
-        name: 'X',
-        url: 'https://x.com/toukoumcode',
+        name: 'Apple Music (Alpha Morris)',
+        url: 'https://music.apple.com/in/artist/alpha-morris/1563571707',
       },
     ],
   };

@@ -13,10 +13,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Toukoum Portfolio",
+  title: "Ayushman Portfolio",
   description: "Interactive portfolio with an AI-powered Memoji that answers questions about me, my skills, and my experience",
   keywords: [
-    "Toukoum", 
+    "Ayushman", 
+    "Ayushman Mohapatra",
     "Portfolio", 
     "Developer", 
     "AI", 
@@ -25,28 +26,30 @@ export const metadata: Metadata = {
     "Web Development",
     "Full Stack",
     "Next.js",
-    "React"
+    "React",
+    "Alpha Morris",
+    "Music Producer"
   ],
   authors: [
     {
-      name: "Toukoum",
-      url: "https://toukoum.fr",
+      name: "Ayushman Mohapatra",
+      url: "https://github.com/ayushmaninbox",
     },
   ],
-  creator: "Toukoum",
+  creator: "Ayushman Mohapatra",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://toukoum.fr",
-    title: "Toukoum Portfolio",
+    url: "https://ayushman-portfolio.vercel.app",
+    title: "Ayushman Portfolio",
     description: "Interactive portfolio with an AI-powered Memoji that answers questions about me",
-    siteName: "Toukoum Portfolio",
+    siteName: "Ayushman Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Toukoum Portfolio",
+    title: "Ayushman Portfolio",
     description: "Interactive portfolio with an AI-powered Memoji that answers questions about me",
-    creator: "@toukoum",
+    creator: "@theayushmanguy",
   },
   icons: {
     icon: [
