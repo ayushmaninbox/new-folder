@@ -1,6 +1,7 @@
 // @ts-nocheck
-const useFluidCursor = () => {
-  const canvas = document.getElementById('fluid');
+const useFluidCursor = (canvas: HTMLCanvasElement) => {
+  if (!canvas) return;
+  
   resizeCanvas();
 
   //try to adjust settings
@@ -1326,6 +1327,9 @@ const useFluidCursor = () => {
     }
     return hash;
   }
+
+  // Start the animation loop
+  update();
 };
 
 export default useFluidCursor;
