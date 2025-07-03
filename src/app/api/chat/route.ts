@@ -1,3 +1,4 @@
+import { openai } from '@ai-sdk/openai';
 import { streamText } from 'ai';
 import { SYSTEM_PROMPT } from './prompt';
 import { getContact } from './tools/getContact';
@@ -9,13 +10,9 @@ import { getResume } from './tools/getResume';
 import { getSkills } from './tools/getSkills';
 import { getSports } from './tools/getSport';
 
-// Import different AI providers
-import { openai } from '@ai-sdk/openai';
-import { createGroq } from '@ai-sdk/groq';
-import { createOpenAI } from '@ai-sdk/openai';
-
 export const maxDuration = 30;
 
+// ❌ Pas besoin de l'export ici, Next.js n'aime pas ça
 function errorHandler(error: unknown) {
   if (error == null) {
     return 'Unknown error';
@@ -27,44 +24,6 @@ function errorHandler(error: unknown) {
     return error.message;
   }
   return JSON.stringify(error);
-}
-
-// Initialize AI providers
-const groq = createGroq({
-  apiKey: process.env.GROQ_API_KEY,
-});
-
-const huggingface = createOpenAI({
-  apiKey: process.env.HUGGINGFACE_API_KEY,
-  baseURL: 'https://api-inference.huggingface.co/v1/',
-});
-
-const together = createOpenAI({
-  apiKey: process.env.TOGETHER_API_KEY,
-  baseURL: 'https://api.together.xyz/v1',
-});
-
-// Function to get the best available model
-function getAvailableModel() {
-  // Priority order: Groq (fastest free) -> Hugging Face -> Together -> OpenAI (fallback)
-  if (process.env.GROQ_API_KEY) {
-    return groq('llama-3.3-70b-versatile'); // Fast and free
-  }
-  
-  if (process.env.HUGGINGFACE_API_KEY) {
-    return huggingface('microsoft/DialoGPT-medium'); // Free tier available
-  }
-  
-  if (process.env.TOGETHER_API_KEY) {
-    return together('meta-llama/Llama-2-7b-chat-hf'); // Free tier available
-  }
-  
-  // Fallback to OpenAI if no other keys are available
-  if (process.env.OPENAI_API_KEY) {
-    return openai('gpt-4o-mini');
-  }
-  
-  throw new Error('No AI API key configured. Please add GROQ_API_KEY, HUGGINGFACE_API_KEY, TOGETHER_API_KEY, or OPENAI_API_KEY to your .env.local file.');
 }
 
 export async function POST(req: Request) {
@@ -85,10 +44,8 @@ export async function POST(req: Request) {
       getInternship,
     };
 
-    const model = getAvailableModel();
-
     const result = streamText({
-      model,
+      model: openai('gpt-4o-mini'),
       messages,
       toolCallStreaming: true,
       tools,
